@@ -1,2 +1,2 @@
 # 使用说明
-编辑器请使用UTF-8编码，编译时请用XeLaTeX引擎。
+编辑器请使用 UTF-8 编码，编译时请用 XeLaTeX 引擎。在TeXLive/MacTeX 和 CTeX 上测试通过。
