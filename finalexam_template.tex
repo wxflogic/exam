@@ -1,16 +1,19 @@
-\documentclass[12pt]{ctexart}
-\usepackage[T1]{fontenc}
-\usepackage{CJKutf8}
+%!TEX program = xelatex
+
+\documentclass[12pt,a4paper]{ctexart}
+%\usepackage[T1]{fontenc}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
 \usepackage{array}
 \usepackage{lastpage} % 获取总页数
-\usepackage{dashrule} % 用于画虚线
-\usepackage{tcolorbox} % 用于画文本框
 \usepackage{fancyhdr} % 用于定制页眉页脚
+\newcommand{\myDash}{--\,--\,--\,--\,--\,--\,--\,--} % 虚线
 
-\setlength{\baselineskip}{1.5\baselineskip} % 正文1.5倍行距
-\renewcommand{\arraystretch}{1.5} % 表格1.5倍行距
+\usepackage{pstricks} % 用于画方框
+\definecolor{myGrey}{rgb}{0.8,0.8,0.8} % 定义灰色
+
+\setlength{\baselineskip}{1.2\baselineskip} % 正文1.2倍行距
+\renewcommand{\arraystretch}{1.2} % 表格1.2倍行距
 
 %===页眉页脚定制===%
 
@@ -23,7 +26,7 @@
 
 %---其他页页眉页脚---
 \pagestyle{fancy}
-\fancyhead[C]{{\footnotesize 中山大学本科生期末考试试卷}}
+\fancyhead[C]{{\footnotesize {\kaishu 中山大学本科生期末考试试卷}}}
 \fancyfoot[C]{{\footnotesize 第\thepage 页，共\pageref{LastPage} 页}}
 \renewcommand{\headrulewidth}{0pt}
 
@@ -35,39 +38,43 @@
 \thispagestyle{plain}
 
 \begin{center}
-\textbf{\LARGE{}中山大学本科生期末考试}
-\par\end{center}{\LARGE \par}
+\textbf{{\zihao{2} 中山大学本科生期末考试}}
+\end{center}
+
+\smallskip
 
 \begin{center}
-{\large{}考试科目：逻辑学（A/B卷）}
-\par\end{center}{\large \par}
+{\zihao{3} 考试科目：《\#\#\#\#\#》（A卷/B卷）}
+\end{center}
 
-{\kaishu%
-\begin{tabular}{>{\raggedright}m{0.5\textwidth}>{\raggedright}m{0.5\textwidth}}
-学年学期：2017学年第1学期 & 姓\hspace{2em}名：\underline{\hspace{10em}}\tabularnewline
-学\hspace{0.5em}院/系：哲学系 & 学\hspace{2em}号：\underline{\hspace{10em}}\tabularnewline
-考试方式：闭卷 & 年级专业：\underline{\hspace{10em}}\tabularnewline
-考试时长：120分钟 & 班\hspace{2em}别：\underline{\hspace{10em}}\tabularnewline
+{\kaishu
+\noindent\begin{tabular}{>{\raggedright}m{0.5\textwidth}>{\raggedright}m{0.5\textwidth}}
+学年学期：\#\#\#\#学年第\#学期 & 姓\hspace{2em}名：\underline{\hspace{12em}}\tabularnewline
+学\hspace{0.5em}院/系：\#\#\# & 学\hspace{2em}号：\underline{\hspace{12em}}\tabularnewline
+考试方式：闭卷/开卷 & 年级专业：\underline{\hspace{12em}}\tabularnewline
+考试时长：\#分钟 & 班\hspace{2em}别：\underline{\hspace{12em}}\tabularnewline
 \end{tabular}}
 
 \bigskip{}
 
-\noindent \hspace{2em}\tcbox[nobeforeafter,box align=base,left=3pt,right=3pt,top=2pt,bottom=2pt,colback=white!80!black]{\textbf{\large{}警示}}{\fangsong~《中山大学授予学士学位工作细则》第八条：“考试作弊者，不授予学士学位。”
-}
+\noindent\psscalebox{1.2 1.2} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(0,-0.1)(1.2,0.4)
+\psframe[linecolor=black, linewidth=0.02, fillstyle=solid,fillcolor=myGrey, dimen=outer, framearc=0.3](1.2,0.4)(0.0,-0.4)
+\rput[c](0.6,0.0){{\heiti 警示}}
+\end{pspicture}
+}{\fangsong《中山大学授予学士学位工作细则》第八条：“考试作弊者，不授予学士学位。”}
 
-\bigskip{}
+\smallskip{}
 
-\hdashrule{5em}{1pt}{2pt}以下为试题区域，共10道题，总分100分，考生请在答题纸上作答\hdashrule{5em}{1pt}{2pt}
+\begin{center}
+\myDash\colorbox{myGrey}{\kaishu{\zihao{5} 以下为试题区域，共\#道题，总分100分，考生请在答题纸上作答}}\myDash
+\end{center}
+
 
 %===试题部分===%
 
-\begin{enumerate}
-\item （10分）第1题
-\item （10分）第2题
-\item （10分）第3题
-\item （10分）第4题
-\item （10分）第5题
-\item （10分）第5题
-\end{enumerate}
+
+
 
 \end{document}
